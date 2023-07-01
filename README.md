@@ -17,6 +17,19 @@ pnpm install
 yarn install
 ```
 
+## Deploy in-memory database
+
+```bash
+# npm
+npm run database:dev
+
+# pnpm
+pnpm run database:dev
+
+# yarn
+yarn database:dev
+```
+
 ## Development Server
 
 Start the development server on `http://localhost:3000`:
