@@ -10,10 +10,14 @@ import {
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
+import unoClassConfig from './configs/unocss'
 
 export default defineConfig({
   shortcuts: [
-    // ...
+    // Buttons
+    unoClassConfig.button,
+    unoClassConfig.base,
+    unoClassConfig.shadow,
   ],
   theme: {
     colors: {
