@@ -14,7 +14,7 @@
     "serve": "serve dist/",
     "lint": "eslint --ext \".ts,.js,.vue\" --ignore-path .eslintignore .",
     "lint:fix": "eslint --fix --ext \".ts,.vue\" --ignore-path .eslintignore .",
-    "postinstall": "nuxt prepare && husky install",
+    "postinstall": "nuxt prepare && husky install && prisma generate",
     "clean": "rm -rf .nuxt dist .output",
     "prepare": "husky install",
     "vercel-build": "prisma generate && prisma migrate deploy && nuxt build",
