@@ -6,7 +6,7 @@ export const helloRouter = router({
     .input(
       z.object({
         text: z.string().nullish(),
-      })
+      }),
     )
     .query(({ input }) => {
       return {

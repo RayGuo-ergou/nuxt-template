@@ -7,7 +7,7 @@ export const userRouter = router({
       z.object({
         name: z.string().nullable(),
         email: z.string(),
-      })
+      }),
     )
     .mutation(({ ctx, input }) => {
       return ctx.prisma.user.create({

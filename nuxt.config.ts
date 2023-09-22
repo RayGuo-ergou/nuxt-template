@@ -4,11 +4,11 @@ const prismaClient = require
   .resolve('@prisma/client')
   .replace(
     /@prisma(\/|\\)client(\/|\\)index\.js/,
-    '.prisma/client/index-browser.js'
+    '.prisma/client/index-browser.js',
   )
 
-const prismaIndexBrowser = path.normalize(
-  path.relative(process.cwd(), prismaClient)
+const prismaIndexBrowser = '../' + path.normalize(
+  path.relative(process.cwd(), prismaClient),
 )
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -23,7 +23,8 @@ export default defineNuxtConfig({
       },
     },
   },
-  modules: ['@unocss/nuxt', '@vueuse/nuxt', '@hypernym/nuxt-anime'],
+  modules: ['@unocss/nuxt', '@vueuse/nuxt'],
+
   build: {
     transpile: ['trpc-nuxt'],
   },
@@ -39,4 +40,8 @@ export default defineNuxtConfig({
     // private runtime config
   },
   devtools: { enabled: true },
+  typescript: {
+    typeCheck: true,
+    strict: true,
+  },
 })

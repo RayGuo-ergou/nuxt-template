@@ -3,10 +3,14 @@
     <div v-for="user in users" :key="user.email">
       {{ user.name }}
     </div>
-    <h1 class="text-indigo">User</h1>
-    <input v-model="name" type="text" />
-    <input v-model="email" type="email" />
-    <button @click="submit">submit</button>
+    <h1 class="text-indigo">
+      User
+    </h1>
+    <input v-model="name" type="text">
+    <input v-model="email" type="email">
+    <button @click="submit">
+      submit
+    </button>
   </div>
 </template>
 

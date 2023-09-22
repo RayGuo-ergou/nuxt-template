@@ -21,10 +21,10 @@ export const useHttp = () => {
   const { $client } = useNuxtApp()
 
   const user = {
-    async addUser(input: IUser) {
+    async addUser (input: IUser) {
       return await $client.user.addUser.mutate(input)
     },
-    async getUsers() {
+    async getUsers () {
       return await $client.user.user.query()
     },
   }
