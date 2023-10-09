@@ -1,11 +1,11 @@
-import { initTRPC, TRPCError } from '@trpc/server'
+import { initTRPC } from '@trpc/server'
 import superjson from 'superjson'
 import { ZodError } from 'zod'
 import type { Context } from './context'
 
 const t = initTRPC.context<Context>().create({
   transformer: superjson,
-  errorFormatter ({ shape, error }) {
+  errorFormatter({ shape, error }) {
     return {
       ...shape,
       data: {
@@ -27,7 +27,7 @@ export const router = t.router
 /**
  * Create an unprotected procedure
  * @see https://trpc.io/docs/v10/procedures
- **/
+ */
 export const publicProcedure = t.procedure
 
 /**

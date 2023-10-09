@@ -1,4 +1,6 @@
-import path from 'path'
+import path from 'node:path'
+
+import process from 'node:process'
 
 const prismaClient = require
   .resolve('@prisma/client')
@@ -7,9 +9,9 @@ const prismaClient = require
     '.prisma/client/index-browser.js',
   )
 
-const prismaIndexBrowser = '../' + path.normalize(
+const prismaIndexBrowser = `../${path.normalize(
   path.relative(process.cwd(), prismaClient),
-)
+)}`
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   alias: {
