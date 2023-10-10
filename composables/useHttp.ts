@@ -12,7 +12,7 @@
  * @link https://github.com/wobsoriano/trpc-nuxt
  */
 
-interface IUser {
+interface User {
   name: string
   email: string
 }
@@ -21,15 +21,22 @@ export function useHttp() {
   const { $client } = useNuxtApp()
 
   const user = {
-    async addUser(input: IUser) {
+    async addUser(input: User) {
       return await $client.user.addUser.mutate(input)
     },
     async getUsers() {
-      return await $client.user.user.query()
+      return await $client.user.user.useQuery()
+    },
+  }
+
+  const hello = {
+    async getHello(name: string) {
+      return await $client.hello.hello.useQuery({ name })
     },
   }
 
   return {
     user,
+    hello,
   }
 }
