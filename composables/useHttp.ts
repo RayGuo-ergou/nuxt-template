@@ -9,7 +9,10 @@
  * useMutation has not implemented in nuxt/trpc yet
  * So every POST request uses try catch
  * wait for useMutation to be implemented
- * @link https://github.com/wobsoriano/trpc-nuxt
+ * @see https://github.com/wobsoriano/trpc-nuxt
+ * @see https://github.com/wobsoriano/trpc-nuxt/issues/119
+ * @see https://github.com/wobsoriano/trpc-nuxt/issues/57
+ * @see https://github.com/wobsoriano/trpc-nuxt/pull/65
  */
 
 interface User {
