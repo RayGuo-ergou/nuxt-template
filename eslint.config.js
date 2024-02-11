@@ -1,3 +1,3 @@
-import { defaultConfig, ray } from '@ergou_rrrr/eslint-config'
+import ray from '@ergou_rrrr/eslint-config'
 
-export default ray(defaultConfig)
+export default ray()

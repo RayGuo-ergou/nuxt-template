@@ -1,21 +1,3 @@
-<script setup lang="ts">
-const name = ref('John Doe')
-const email = ref('example@abc.com')
-const hello = ref('')
-
-const { data: users, refresh } = await useHttp().user.getUsers()
-async function submit() {
-  await useHttp().user.addUser({
-    name: name.value,
-    email: email.value,
-  })
-  const { data: helloMessage } = await useHttp().hello.getHello(name.value)
-  hello.value = helloMessage.value!.greeting
-
-  await refresh()
-}
-</script>
-
 <template>
   <div>
     <div v-if="hello">
@@ -34,5 +16,23 @@ async function submit() {
     </button>
   </div>
 </template>
+
+<script setup lang="ts">
+const name = ref('John Doe')
+const email = ref('example@abc.com')
+const hello = ref('')
+
+const { data: users, refresh } = await useHttp().user.getUsers()
+async function submit() {
+  await useHttp().user.addUser({
+    name: name.value,
+    email: email.value,
+  })
+  const { data: helloMessage } = await useHttp().hello.getHello(name.value)
+  hello.value = helloMessage.value!.greeting
+
+  await refresh()
+}
+</script>
 
 <style scoped></style>
