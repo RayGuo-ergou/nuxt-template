@@ -38,6 +38,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       // public runtime config
+      NODE_ENV: process.env.NODE_ENV,
     },
     // private runtime config
   },
