@@ -30,7 +30,7 @@
     "@trpc/client": "^10.45.2",
     "@trpc/server": "^10.45.2",
     "@types/node": "^20.12.7",
-    "@unocss/nuxt": "^0.59.2",
+    "@unocss/nuxt": "^0.59.3",
     "@vueuse/core": "^10.9.0",
     "@vueuse/nuxt": "^10.9.0",
     "eslint": "^9.0.0",
