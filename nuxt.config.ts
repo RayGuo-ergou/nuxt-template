@@ -18,14 +18,9 @@ export default defineNuxtConfig({
     '.prisma/client/index-browser': prismaIndexBrowser,
   },
 
-  vite: {
-    vue: {
-      script: {
-        propsDestructure: true,
-      },
-    },
-  },
-  modules: ['@unocss/nuxt', '@vueuse/nuxt'],
+  extends: ['@nuxt/ui-pro'],
+
+  modules: ['@vueuse/nuxt', '@nuxt/ui'],
 
   build: {
     transpile: ['trpc-nuxt'],
